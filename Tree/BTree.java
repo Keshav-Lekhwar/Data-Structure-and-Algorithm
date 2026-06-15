@@ -14,15 +14,17 @@ class Node {
     
 }
 
+
 public class BTree {
     Node root;
 
+
+    
     public void insert(int data){
         
         Node newnode = new Node(data);
 
         if(root==null){
-
             root = newnode;
             return;
         }
@@ -54,53 +56,55 @@ public class BTree {
         }
             
         }
-
     }
 
+
+
+// Depth First Search ( preorder, postorder, inorder)
 
  public void preorder(Node root) {
 
-    if (root == null) {
+    if (root == null) 
         return;
-    }
+    
 
     System.out.print(root.data + " ");
-
     preorder(root.left);
     preorder(root.right);
 }
 
+
 public void inorder(Node root) {
 
-    if (root == null) {
+    if (root == null) 
         return;
-    }
+    
 
     inorder(root.left);
-
     System.out.print(root.data + " ");
-
     inorder(root.right);
 }
 
+
 public void postorder(Node root) {
 
-    if (root == null) {
+    if (root == null) 
         return;
-    }
+    
 
     postorder(root.left);
     postorder(root.right);
-
     System.out.print(root.data + " ");
 }
 
+
+
+//Breadth-First Search or Level Order printing 
+
 public void levelOrder(Node root) {
 
-    if (root == null) {
-        return;
-    }
-
+    if (root == null)  return;
+    
     Queue<Node> queue = new LinkedList<>();
     queue.offer(root);
 
@@ -110,13 +114,10 @@ public void levelOrder(Node root) {
 
         System.out.print(current.data + " ");
 
-        if (current.left != null) {
-            queue.offer(current.left);
-        }
-
-        if (current.right != null) {
-            queue.offer(current.right);
-        }
+        if (current.left != null)  queue.offer(current.left);
+        
+        if (current.right != null) queue.offer(current.right);
+        
     }
 }
     
@@ -130,9 +131,7 @@ public void levelOrder(Node root) {
         obj.insert(40);
         obj.insert(50);
 
-
         obj.levelOrder(obj.root);
-        
         
     }
 }

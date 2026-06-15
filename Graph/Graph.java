@@ -4,7 +4,8 @@ import java.util.Queue;
 
 class Graph {
 
-    // DFS
+    //DFS
+
     public static void DFS(int graph[][], int start) {
 
         boolean[] visited = new boolean[graph.length];
@@ -29,6 +30,8 @@ class Graph {
 
     }
 
+
+
     // BFS
 
     public static void BFS(int graph[][], int start){
@@ -36,7 +39,6 @@ class Graph {
         boolean[] visited = new boolean[graph.length];
 
         Arrays.fill(visited, false);
-
        
         Queue<Integer> q = new LinkedList<>();
         q.offer(start);
@@ -63,6 +65,9 @@ class Graph {
 
 
     }
+
+
+
     
 
     public static void main(String[] args) {
